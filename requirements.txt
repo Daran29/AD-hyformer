@@ -1,0 +1,24 @@
+# torch and torchvision are already installed in the base Docker image
+# (pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime) -- intentionally NOT
+# listed here, since reinstalling them via pip wastes build time/RAM
+# and can even overwrite the CUDA-matched version with a mismatched one.
+# If running OUTSIDE Docker (e.g. a plain venv), install them first:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+nibabel>=5.1.0
+SimpleITK>=2.3.0
+numpy>=1.24.0,<2.0.0
+scikit-learn>=1.3.0
+opencv-python-headless>=4.8.0
+matplotlib>=3.7.0
+albumentations>=1.3.0
+scipy>=1.11.0
+pytest>=7.4.0
+tensorboard>=2.14.0
+streamlit>=1.28.0
+flask>=3.0.0
+reportlab>=4.0.0
+grad-cam>=1.4.8
+tqdm>=4.66.0
+pandas>=2.1.0
+dcm2niix>=1.0.20240202
+pydicom>=2.4.0

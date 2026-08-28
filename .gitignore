@@ -1,0 +1,132 @@
+# ============================================================
+# AD-HyFormer - Git Ignore
+# ============================================================
+
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# -------------------------
+# Virtual environments
+# -------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda-env/
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
+
+# -------------------------
+# Python / ML caches
+# -------------------------
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# -------------------------
+# Machine Learning Outputs
+# -------------------------
+checkpoints/
+checkpoint/
+models/
+model/
+weights/
+runs/
+wandb/
+mlruns/
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.keras
+*.safetensors
+
+# -------------------------
+# Experiment / Generated Outputs
+# -------------------------
+outputs/
+output/
+results/
+result/
+predictions/
+reports/
+visualizations/
+figures/
+
+# -------------------------
+# Preprocessed / Generated Data
+# -------------------------
+processed/
+preprocessed/
+preprocessing_output/
+cache/
+
+# -------------------------
+# Large Medical Imaging Files
+# -------------------------
+*.nii
+*.nii.gz
+*.dcm
+*.dicom
+
+# -------------------------
+# Large Dataset Files
+# -------------------------
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# -------------------------
+# Temporary files
+# -------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# -------------------------
+# TensorBoard
+# -------------------------
+tensorboard/

@@ -1,0 +1,25 @@
+# Keep datasets and large artifacts out of the image -- they're
+# volume-mounted at runtime instead (see docker-compose.yml).
+datasets/
+weights/
+results/
+reports/
+tests/sample_data/
+
+# Python cruft
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+venv/
+.venv/
+
+# Editor / VCS
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db

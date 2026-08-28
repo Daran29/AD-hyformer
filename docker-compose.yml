@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  ad-hyformer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ad-hyformer:latest
+    container_name: ad-hyformer-dev
+
+    # GPU passthrough (requires nvidia-container-toolkit on Linux,
+    # or Docker Desktop + WSL2 GPU support on Windows)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    volumes:
+      # Live-mount your code so edits on the host are reflected
+      # instantly inside the container -- no rebuild needed while coding.
+      - ./:/workspace
+      # Keep large datasets outside the image; mount your real dataset
+      # location here once you have ADNI/AIBL/OASIS downloaded.
+      - ./datasets:/workspace/datasets
+
+    ports:
+      - "8501:8501"   # Streamlit dashboard
+      - "6006:6006"   # TensorBoard
+
+    environment:
+      - PYTHONUNBUFFERED=1
+      - NVIDIA_VISIBLE_DEVICES=all
+
+    stdin_open: true   # keeps container alive for interactive `docker exec`
+    tty: true
+    shm_size: "4gb"    # PyTorch DataLoader workers need shared memory
